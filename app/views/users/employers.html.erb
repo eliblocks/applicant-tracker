@@ -1,0 +1,11 @@
+<h1>Employers</h1>
+<div>
+  <% @new_employers.each do |employer| %>
+    <div>
+      <%= form_for JobApplication.new, html: {id: "#{employer.name}-form" } do |f| %>
+        <%= f.hidden_field :employer_id, value: employer.id %>
+        <%= f.submit employer.name %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
